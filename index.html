@@ -3,478 +3,157 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sandip Kumar Verma - Portfolio</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+  <title>sandip</title>
   <style>
     /* General Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
       font-family: 'Poppins', sans-serif;
-      color: white;
-      background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee, #fbc2eb);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
-      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      color: #333;
     }
-
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    h1, h2, h3 {
+      margin: 0;
     }
-
     a {
-      color: white;
       text-decoration: none;
+      color: inherit;
     }
-
-    section {
-      padding: 50px;
-      text-align: center;
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-
-    /* Flower Animation */
-    .flower {
-      position: absolute;
-      width: 50px;
-      height: 50px;
-      background: url('https://www.transparentpng.com/thumb/flower/2LgT7A-flower-png-image.png') no-repeat center/cover;
-      animation: float 5s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
-    }
-
-    /* Split Screen Homepage */
-    .split-screen {
-      display: flex;
-      height: 100vh;
-    }
-
-    .left-side, .right-side {
-      flex: 1;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .video-container {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    video {
-      width: 100%;
-      height: 50%; /* Each video takes half the height */
-      object-fit: cover;
-      transition: opacity 0.5s ease;
-    }
-
-    /* Hide videos by default on mobile */
-    @media (max-width: 768px) {
-      video {
-        opacity: 0;
-      }
-    }
-
-    .welcome-message {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      z-index: 1;
-    }
-
-    .welcome-message h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-    }
-
-    .welcome-message h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-    }
-
-    .cta-buttons {
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-    }
-
-    .cta-buttons a {
-      padding: 10px 20px;
-      background: rgba(255, 255, 255, 0.2);
-      border: 2px solid white;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-    }
-
-    .cta-buttons a:hover {
-      background: rgba(255, 255, 255, 0.5);
-    }
-
-    /* About Me Section */
-    .about-section {
-      background: rgba(0, 0, 0, 0.8);
-    }
-
-    .about-section p {
-      font-size: 1.2rem;
-      max-width: 800px;
+    .container {
+      width: 90%;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
-    .about-section .contact-info {
-      margin-top: 20px;
-      font-size: 1.1rem;
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+    nav a {
+      margin: 0 15px;
+      font-weight: 500;
+    }
+    .cta-button {
+      background: #FF6D00;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
     }
 
-    /* Blog Section */
-    .blog-section {
-      background: rgba(0, 0, 0, 0.9);
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #1A73E8, #6A1B9A);
+      color: white;
+      padding: 100px 0;
+      text-align: center;
     }
-
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
+    .hero h1 {
+      font-size: 48px;
     }
-
-    .blog-card {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 20px;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
+    .hero p {
+      font-size: 18px;
+      margin: 20px 0;
     }
-
-    .blog-card:hover {
-      transform: scale(1.05);
-    }
-
-    .blog-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-    }
-
-    /* Portfolio Section */
-    .portfolio-section {
-      background: rgba(0, 0, 0, 0.8);
-    }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-
-    .portfolio-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 10px;
-    }
-
-    .portfolio-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .portfolio-item:hover img {
-      transform: scale(1.1);
+    .hero .cta-button {
+      margin: 0 10px;
     }
 
     /* Services Section */
-    .services-section {
-      background: rgba(0, 0, 0, 0.9);
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-
-    .service-card {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 20px;
-      border-radius: 10px;
+    .services {
+      padding: 80px 0;
       text-align: center;
     }
-
-    .service-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
+    .services h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .service-card {
+      background: #F5F5F5;
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
     }
 
-    /* Contact Section */
-    .contact-section {
-      background: rgba(0, 0, 0, 0.8);
-    }
-
-    .contact-section .contact-info {
-      margin-top: 20px;
-      font-size: 1.1rem;
-    }
-
-    .contact-section .contact-info a {
-      color: #ff9a9e; /* Highlight color for links */
-      text-decoration: underline;
-    }
-
-    .contact-section .contact-info a:hover {
-      color: #fad0c4; /* Hover color for links */
-    }
-
-    .contact-form {
-      max-width: 600px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .contact-form input, .contact-form textarea {
-      padding: 10px;
-      border: 2px solid white;
-      border-radius: 5px;
-      background: transparent;
+    /* Footer */
+    footer {
+      background: #333;
       color: white;
+      padding: 40px 0;
+      text-align: center;
     }
-
-    .contact-form button {
-      padding: 10px 20px;
-      background: rgba(255, 255, 255, 0.2);
-      border: 2px solid white;
-      border-radius: 5px;
+    footer .social-icons a {
+      margin: 0 10px;
       color: white;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .contact-form button:hover {
-      background: rgba(255, 255, 255, 0.5);
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .split-screen {
-        flex-direction: column;
-      }
-
-      .welcome-message h1 {
-        font-size: 2rem;
-      }
-
-      .welcome-message h2 {
-        font-size: 1.5rem;
-      }
-
-      .cta-buttons {
-        flex-direction: column;
-      }
     }
   </style>
 </head>
 <body>
-  <!-- Homepage -->
-  <div class="split-screen">
-    <!-- Left Side -->
-    <div class="left-side">
-      <div class="video-container">
-        <!-- Video 1: Web Development -->
-        <video id="video1" muted loop>
-          <source src="https://pixabay.com/videos/codes-internet-computer-code-23355/" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <!-- Video 2: Video Editing -->
-        <video id="video2" muted loop>
-          <source src="https://pixabay.com/videos/welcome-intro-opener-start-video-177166/ " type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </div>
+  <!-- Header -->
+  <header class="container">
+    <div class="logo">Logo</div>
+    <nav>
+        <a href="portfolio.html">My Portfolio</a>
+      <a href="my first blog.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="contact us.html" class="cta-button">Contact Us</a>
+  </header>
 
-    <!-- Right Side -->
-    <div class="right-side">
-      <div class="video-container">
-        <!-- Video 3: Mobile/Laptop Repair -->
-        <video id="video3" muted loop>
-          <source src=" https://pixabay.com/videos/computer-keyboard-typing-white-3188/" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <!-- Video 4: Photo Editing -->
-        <video id="video4" muted loop>
-          <source src="https://pixabay.com/videos/photoshop-editing-ipad-pimples-42967/ " type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </div>
-
-    <!-- Welcome Message -->
-    <div class="welcome-message">
-      <h1>Welcome to My Portfolio</h1>
-      <h2>Sandip Kumar Verma</h2>
-      <div class="cta-buttons">
-        <a href="#about">About Me</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- About Me Section -->
-  <section id="about" class="about-section">
-    <h2>About Me</h2>
-    <p>
-      Hi, I'm <strong>Sandip Kumar Verma</strong>, a passionate web developer, video editor, and tech enthusiast. With expertise in web development, video editing, photo editing, and mobile/laptop repair, I bring creativity and technical skills to every project. I specialize in creating stunning websites, editing professional videos, and solving hardware/software issues. Let's work together to bring your ideas to life!
-    </p>
-    <div class="contact-info">
-      <p>Mobile: <a href="tel:9831367071">9831367071</a></p>
-      <p>Email: <a href="mailto:sandipverma700007@gmail.com">sandipverma700007@gmail.com</a></p>
-    </div>
-  </section>
-
-  <!-- Blog Section -->
-  <section id="blog" class="blog-section">
-    <h2>Blog</h2>
-    <div class="blog-grid">
-      <div class="blog-card">
-        <h3>Web Development Tips</h3>
-        <p>Learn the latest web development techniques and tools.</p>
-      </div>
-      <div class="blog-card">
-        <h3>Video Editing Tutorials</h3>
-        <p>Master video editing with step-by-step guides.</p>
-      </div>
-      <div class="blog-card">
-        <h3>Photo Editing Tricks</h3>
-        <p>Discover advanced photo editing tips and tricks.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="portfolio-section">
-    <h2>Portfolio</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-item">
-        <img src="images/web-dev.jpg" alt="Web Development Project">
-      </div>
-      <div class="portfolio-item">
-        <img src="images/video-edit.jpg" alt="Video Editing Project">
-      </div>
-      <div class="portfolio-item">
-        <img src="images/photo-edit.jpg" alt="Photo Editing Project">
-      </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Welcome to Creative Pro</h1>
+      <p>We help businesses grow with innovative solutions.</p>
+      <a href="about.html" class="cta-button">Learn More</a>
+      <a href="portfolio.html" class="cta-button">Our Work</a>
     </div>
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="services-section">
-    <h2>Services</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>Web Development</h3>
-        <p>Custom websites, WordPress, and more.</p>
-      </div>
-      <div class="service-card">
-        <h3>Video Editing</h3>
-        <p>YouTube videos, reels, and professional edits.</p>
-      </div>
-      <div class="service-card">
-        <h3>Photo Editing</h3>
-        <p>Retouching, graphic design, and more.</p>
+  <section class="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Web Design</h3>
+          <p>We create stunning websites that drive results.</p>
+        </div>
+        <div class="service-card">
+          <h3>SEO</h3>
+          <p>Boost your online visibility with our SEO strategies.</p>
+        </div>
+        <div class="service-card">
+          <h3>Branding</h3>
+          <p>Build a strong brand identity with our experts.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section">
-    <h2>Contact Me</h2>
-    <div class="contact-info">
-      <p>Mobile: <a href="tel:9831367071">9831367071</a></p>
-      <p>Email: <a href="mailto:sandipverma700007@gmail.com">sandipverma700007@gmail.com</a></p>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2023 Creative Pro. All Rights Reserved.</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/share/1FWESFFhSt/">Facebook</a>
+        <a href="">Instagram</a>
+        <a href="https://x.com/Sandipverma429?t=BfpcdlXbi4pXEXSvMs-rtQ&s=09">Twitter</a>
+        <a href="#">LinkedIn</a>
+      </div>
     </div>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-  <script>
-    // Function to change background color on touch/click
-    const colors = ['#ff9a9e', '#fad0c4', '#fbc2eb', '#a6c1ee', '#fbc2eb'];
-    let currentColorIndex = 0;
-
-    document.addEventListener('click', () => {
-      currentColorIndex = (currentColorIndex + 1) % colors.length;
-      document.body.style.background = colors[currentColorIndex];
-    });
-
-    // Function to add flower animation on touch/click
-    document.addEventListener('click', (e) => {
-      const flower = document.createElement('div');
-      flower.className = 'flower';
-      flower.style.left = `${e.clientX - 25}px`;
-      flower.style.top = `${e.clientY - 25}px`;
-      document.body.appendChild(flower);
-
-      setTimeout(() => {
-        flower.remove();
-      }, 5000); // Remove flower after 5 seconds
-    });
-
-    // Function to play/pause videos on hover (for PC/laptop users)
-    const videos = document.querySelectorAll('video');
-
-    videos.forEach(video => {
-      video.addEventListener('mouseenter', () => {
-        video.play();
-        video.style.opacity = 1;
-      });
-
-      video.addEventListener('mouseleave', () => {
-        video.pause();
-        video.style.opacity = 0;
-      });
-    });
-
-    // Function to play/pause videos on touch (for mobile users)
-    if ('ontouchstart' in window) {
-      videos.forEach(video => {
-        video.addEventListener('touchstart', () => {
-          if (video.paused) {
-            video.play();
-            video.style.opacity = 1;
-          } else {
-            video.pause();
-            video.style.opacity = 0;
-          }
-        });
-      });
-    }
-  </script>
+  </footer>
 </body>
 </html>

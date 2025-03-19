@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sandip Verma - Portfolio</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    h1, h2, h3 {
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(-45deg, #1A73E8, #6A1B9A, #FF6D00, #FF4081);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    /* Projects Section */
+    .projects {
+      padding: 80px 0;
+      text-align: center;
+    }
+    .projects h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .project-card {
+      background: #F5F5F5;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .project-card h3 {
+      font-size: 24px;
+      margin: 20px 0 10px;
+    }
+    .project-card p {
+      font-size: 16px;
+      padding: 0 20px 20px;
+    }
+
+    /* CTA Section */
+    .cta {
+      background: #FF6D00;
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+    .cta h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .cta .cta-button {
+      background: white;
+      color: #FF6D00;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    .cta .cta-button:hover {
+      background: #F5F5F5;
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div>
+      <h1>My Portfolio</h1>
+      <p>Check out my work in Web Development, Photo Editing, and Video Editing.</p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects">
+    <div class="container">
+      <h2>My Projects</h2>
+      <div class="projects-grid">
+        <!-- Project 1: Web Development -->
+        <div class="project-card">
+          <img src="https://via.placeholder.com/400x200" alt="Web Development Project">
+          <h3>Web Development</h3>
+          <p>A responsive website built using HTML, CSS, and JavaScript.</p>
+        </div>
+        <!-- Project 2: Photo Editing -->
+        <div class="project-card">
+          <img src="https://via.placeholder.com/400x200" alt="Photo Editing Project">
+          <h3>Photo Editing</h3>
+          <p>Professional photo retouching and enhancement using Photoshop.</p>
+        </div>
+        <!-- Project 3: Video Editing -->
+        <div class="project-card">
+          <img src="https://via.placeholder.com/400x200" alt="Video Editing Project">
+          <h3>Video Editing</h3>
+          <p>Engaging video content created using Premiere Pro and After Effects.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Work Together?</h2>
+      <a href="#" class="cta-button">Hire Me</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2023 Sandip Verma. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
